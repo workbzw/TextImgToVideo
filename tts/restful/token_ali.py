@@ -3,6 +3,8 @@ from aliyunsdkcore.request import CommonRequest
 import json
 import time
 
+id = ""
+seceret = ""
 
 class TokenAli:
     @staticmethod
@@ -15,8 +17,8 @@ class TokenAli:
             now = int(time.time())
             exp_time = response_json["Token"]["ExpireTime"]
             if exp_time - now < 60:  # 如果token60秒后过期
-                accesskey_id = "LTAIYZfnAG47b1hw"
-                accesskey_seceret = "b54UIjMRok0bqKd7mrHgtaNBjl6vk0"
+                accesskey_id = id
+                accesskey_seceret = seceret
                 # 创建AcsClient实例
                 client = AcsClient(
                     accesskey_id,
@@ -39,8 +41,8 @@ class TokenAli:
                 return response_json["Token"]["Id"]
 
         else:
-            accesskey_id = "LTAIYZfnAG47b1hw"
-            accesskey_seceret = "b54UIjMRok0bqKd7mrHgtaNBjl6vk0"
+            accesskey_id = id
+            accesskey_seceret = seceret
             # 创建AcsClient实例
             client = AcsClient(
                 accesskey_id,

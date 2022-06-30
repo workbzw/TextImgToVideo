@@ -10,6 +10,7 @@ from tts.restful.token_ali import TokenAli
 # root_path = "/Users/bzw/Movies/"
 # audio_file_path = root_path + "audio.mp3"
 
+appKey = '92V7T8uUg4KyHMjq'
 
 class TtsHeader:
     def __init__(self, appkey, token):
@@ -118,7 +119,6 @@ def requestLongTts4Post(tts_body, appkey, token, audio_file_path):
         print('The request failed: ' + str(body))
 
 
-appKey = '92V7T8uUg4KyHMjq'
 
 
 class TTS:
